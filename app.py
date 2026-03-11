@@ -1,16 +1,16 @@
-from flask import Flask, render_template
+from flask import Flask
 
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello_world():
-    return render_template('index.html')
+@app.route("/")
+def hello():
+    return "Flask CI/CD App Running 🚀"
 
 
-@app.route('/health')
+@app.route("/health")
 def health():
-    return 'Server is up and running'
+    return "Server is up and running"
 
 
 if __name__ == "__main__":
