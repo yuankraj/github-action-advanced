@@ -8,11 +8,8 @@ jobs:
     
     steps:
         - name: checkout code
-          uses: actions/checkout@v4
-
-        - name: Set up Docker Compose (optional, usually pre-installed on ubuntu-latest runners)
-          uses: docker/setup-compose-action@v2  
+          uses: actions/checkout@v4  
          
         - name: deploy with docker compose
           run: |
-            docker-compose -f docker-compose.yml up -d --force-recreate
+            docker compose -f docker-compose.yml up -d --force-recreate
