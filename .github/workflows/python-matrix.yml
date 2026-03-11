@@ -1,1 +1,31 @@
-name: python-matrix
+name: python lint
+
+on: 
+    push:
+        branches: [main]
+
+
+jobs:
+    vaildate:
+        runs-on: ubuntu-latest
+        
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: set up python 
+              uses: actions/setup-python@v5
+              with:
+                python-version: "3.13"
+
+            - name: install dependencies
+              run: pip install -r requirements.txt
+              
+            - name: run lint
+              run: flake8 
+
+                  
+
+
+
+ 
