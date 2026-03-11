@@ -1,0 +1,6 @@
+services: 
+
+    web:
+        image: yuankraj/flash-app
+        ports:
+            - "80:80"
