@@ -1,113 +1,369 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DevOps Zero To Hero</title>
+
+<title>AWS DevSecOps Cloud Platform</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
 
 body{
-min-height:100vh;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
 display:flex;
+justify-content:space-between;
 align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
-color:#e0e0e0
+padding:20px 8%;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:100;
 }
 
-.container{text-align:center;padding:2rem;max-width:640px}
-
-h1{
-font-size:2.5rem;
-background:linear-gradient(90deg,#00d2ff,#7b2ff7);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-bottom:.5rem
+nav h2{
+color:#ff9900;
 }
 
-.badge{
-display:inline-block;
-margin:1rem 0;
-padding:.4rem 1.2rem;
-border:1px solid #7b2ff7;
-border-radius:999px;
-font-size:.9rem;
-color:#c4b5fd
-}
-
-.pipeline{
-margin-bottom:1.5rem;
-font-size:.9rem;
-color:#9ca3af
-}
-
-.cards{
+nav ul{
 display:flex;
-gap:1rem;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#ff9900;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
 justify-content:center;
-flex-wrap:wrap
+align-items:center;
+text-align:center;
+animation:fadeIn 2s ease;
+padding:20px;
+}
+
+.hero h1{
+font-size:60px;
+background:linear-gradient(45deg,#ff9900,#ffd700);
+-webkit-background-clip:text;
+color:transparent;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.hero button{
+padding:14px 35px;
+border:none;
+border-radius:30px;
+background:#ff9900;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero button:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #ff9900;
+}
+
+/* SERVICES */
+
+.services{
+padding:80px 10%;
+text-align:center;
+}
+
+.services h2{
+font-size:40px;
+margin-bottom:50px;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .card{
-background:rgba(255,255,255,.06);
-border:1px solid rgba(255,255,255,.1);
-border-radius:12px;
-padding:1.4rem;
-min-width:150px
+background:rgba(255,255,255,0.05);
+border-radius:15px;
+padding:30px;
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.1);
 }
 
-.card span{
-display:block;
-font-size:.7rem;
-color:#9ca3af;
-margin-bottom:.4rem;
-letter-spacing:.1em
+.card:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
-.card strong{
-font-size:1.2rem;
-color:#f9fafb
+.card h3{
+color:#ff9900;
+margin-bottom:10px;
 }
+
+/* PIPELINE */
+
+.pipeline{
+padding:80px 10%;
+text-align:center;
+}
+
+.pipeline h2{
+font-size:40px;
+margin-bottom:40px;
+}
+
+.pipeline-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+gap:10px;
+}
+
+.step{
+padding:15px 25px;
+background:rgba(255,255,255,0.08);
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.2);
+transition:0.3s;
+}
+
+.step:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #ff9900;
+}
+
+.arrow{
+font-size:25px;
+color:#ff9900;
+}
+
+/* CONTACT */
+
+.contact{
+padding:80px 10%;
+text-align:center;
+}
+
+.contact h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.contact p{
+margin:10px;
+font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:40px;
+background:#000;
+text-align:center;
+padding:20px;
+font-size:14px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
 
-<h1>DevOps Zero To Hero [DevSecOps Live]</h1>
-<div class="badge">Josh Batch 10 (USA Edition BOOOM)</div>
+<nav>
 
-<div class="pipeline">
-Built • Tested • Linted • Deployed via GitHub Actions
-</div>
+<h2>AWS DevSecOps</h2>
 
-<div class="cards">
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#pipeline">Pipeline</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+
+
+<section class="hero" id="home">
+
+<h1>AWS Cloud + DevSecOps</h1>
+
+<p>Automated CI/CD Pipeline using GitHub Actions, Docker & AWS</p>
+
+<button onclick="alert('Welcome to my DevSecOps project!')">
+Explore Project
+</button>
+
+</section>
+
+
+
+<section class="services" id="services">
+
+<h2>AWS Cloud Services</h2>
+
+<div class="service-grid">
+
 <div class="card">
-<span>Framework</span>
-<strong>Flask 3.1</strong>
+<h3>EC2</h3>
+<p>Scalable virtual servers in AWS cloud.</p>
 </div>
 
 <div class="card">
-<span>Runtime</span>
-<strong>Python 3.14</strong>
+<h3>S3</h3>
+<p>Secure and durable object storage.</p>
 </div>
 
 <div class="card">
-<span>Deploy</span>
-<strong>AWS ECS</strong>
+<h3>RDS</h3>
+<p>Managed relational database service.</p>
 </div>
 
 <div class="card">
-<span>CI/CD</span>
-<strong>GitHub Actions</strong>
+<h3>Lambda</h3>
+<p>Run code without managing servers.</p>
 </div>
+
+<div class="card">
+<h3>CloudFront</h3>
+<p>Global content delivery network.</p>
+</div>
+
+<div class="card">
+<h3>VPC</h3>
+<p>Secure virtual private cloud networking.</p>
+</div>
+
+<div class="card">
+<h3>ECS</h3>
+<p>Run Docker containers at scale.</p>
+</div>
+
+<div class="card">
+<h3>CloudWatch</h3>
+<p>Monitoring and observability service.</p>
 </div>
 
 </div>
+
+</section>
+
+
+
+<section class="pipeline" id="pipeline">
+
+<h2>DevSecOps CI/CD Pipeline</h2>
+
+<div class="pipeline-container">
+
+<div class="step">Developer Push Code</div>
+<div class="arrow">→</div>
+
+<div class="step">GitHub Repository</div>
+<div class="arrow">→</div>
+
+<div class="step">GitHub Actions</div>
+<div class="arrow">→</div>
+
+<div class="step">Lint & Code Check</div>
+<div class="arrow">→</div>
+
+<div class="step">Security Scan</div>
+<div class="arrow">→</div>
+
+<div class="step">Build Docker Image</div>
+<div class="arrow">→</div>
+
+<div class="step">Push to Registry</div>
+<div class="arrow">→</div>
+
+<div class="step">Deploy to AWS EC2</div>
+<div class="arrow">→</div>
+
+<div class="step">Application Live</div>
+
+</div>
+
+</section>
+
+
+
+<section class="contact" id="contact">
+
+<h2>Contact</h2>
+
+<p>Email: yourmail@example.com</p>
+<p>GitHub: github.com/yourusername</p>
+<p>LinkedIn: linkedin.com/in/yourprofile</p>
+
+</section>
+
+
+
+<footer>
+
+<p>
+© 2026 DevSecOps Project | CI/CD with GitHub Actions + AWS
+</p>
+
+</footer>
+
 
 </body>
 </html>
+```
