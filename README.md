@@ -80,3 +80,20 @@ This ensures vulnerabilities are detected **before production deployment**.
 ---
 
 # 📁 Project Structure
+.
+├── .github/workflows/
+│ ├── devsecops-pipeline.yml
+│ ├── code-quality.yml
+│ ├── dependency-scan.yml
+│ ├── secrets-scan.yml
+│ ├── docker-build-push.yml
+│ ├── docker-lint.yml
+│ ├── image-scan.yml
+│ └── deploy-to-server.yml
+│
+├── app.py
+├── test_app.py
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+└── README.md
